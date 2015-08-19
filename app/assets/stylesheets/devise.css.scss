@@ -1,0 +1,29 @@
+.form-signin {
+  max-width: 330px;
+  padding: 15px;
+  margin: 0 auto; /*space between the box and obj outside of it*/
+}
+.form-signin .form-signin-heading,
+.form-signin .checkbox { /*we disabled the check box*/
+  margin-bottom: 10px;
+}
+.form-signin .checkbox {
+  font-weight: normal;
+}
+/* anything thats assigned class of form-control that is inside form-signin classwwill have these settings */
+.form-signin .form-control {
+  position: relative;
+  height: auto;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 10px; /* Padding is the space inside of an object*/
+  font-size: 16px;
+}
+.form-signin .form-control:focus {
+  z-index: 2;
+}
+/*The z-index CSS, controls the vertical stacking order of elements that overlap. As in, which one appears as if it is physically closer to you. z-index only effects elements that have a position value other than static (the default)*/
+.form-signin input {
+  margin-bottom: 10px;
+}
