@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Moos</h1>
+
+    <% @moos.each do |moo| %>
+  <tr><div class="panel panel-default">
+  <div class="panel-body">
+    <!--Basic panel example-->
+     <%= moo.content %>
+  </div>
+</div>
+   <% end %>
+ <br>
+
+<%= link_to 'New Moo', new_moo_path %>
