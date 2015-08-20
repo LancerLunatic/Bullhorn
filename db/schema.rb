@@ -13,7 +13,7 @@
 
 ActiveRecord::Schema.define(version: 20150820150044) do
 
-  create_table "moos", force: :cascade do |t|
+  create_table "moos", force: :cascade do |t|  #below are fields we can format for rales
     t.text     "content"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

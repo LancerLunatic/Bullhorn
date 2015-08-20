@@ -1,12 +1,16 @@
-<h1>Listing Moos</h1>
+<h1>Recent Moos</h1>
 
     <% @moos.each do |moo| %>
-  <tr><div class="panel panel-default">
+    <div class="panel panel-default">
   <div class="panel-body">
-    <%= moo.content %> sent by <%= moo.user.email %>
+    <%= moo.content %>
   </div>
+      <div class="panel-footer">sent by <%= moo.user.email %> on <%= moo.created_at.strftime(" on %m/%d/%Y") %> at <%= moo.created_at.strftime("%I:%M%p") %></div>
+
 </div>
    <% end %>
- <br>
+
+
+<br>
 
 <%= link_to 'New Moo', new_moo_path %>
