@@ -1,6 +1,7 @@
 class MoosController < ApplicationController
-  before_action :set_moo, only: [:show, :edit, :update, :destroy]
-
+  before_action :set_moo, only: [:show, :edit, :update, :destroy] #before I do any of these actions I must have created a moo
+  before_filter :authenticate_user!, only: [:new, :create, :edit, :update, :destroy] #before someone does any of these things they must be signed in
+  respond_to :html
   # GET /moos
   # GET /moos.json
   def index
@@ -10,6 +11,7 @@ class MoosController < ApplicationController
   # GET /moos/1
   # GET /moos/1.json
   def show
+    respond_with(@moo)
   end
 
   # GET /moos/new
@@ -21,10 +23,11 @@ class MoosController < ApplicationController
   def edit
   end
 
-  # POST /moos
-  # POST /moos.json
   def create
     @moo = Moo.new(moo_params)
+    @moo.user_id = current_user.id #take whoever the logged in user is and ad his ID to the moo he/she just created
+    @moo.save #onoly logged in ppl can create moos
+  end
 
     respond_to do |format|
       if @moo.save
@@ -71,4 +74,3 @@ class MoosController < ApplicationController
     def moo_params
       params.require(:moo).permit(:content)
     end
-end

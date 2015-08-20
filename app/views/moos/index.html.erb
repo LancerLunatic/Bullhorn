@@ -1,12 +1,9 @@
-<p id="notice"><%= notice %></p>
-
 <h1>Listing Moos</h1>
 
     <% @moos.each do |moo| %>
   <tr><div class="panel panel-default">
   <div class="panel-body">
-    <!--Basic panel example-->
-     <%= moo.content %>
+    <%= moo.content %> sent by <%= moo.user.email %>
   </div>
 </div>
    <% end %>
